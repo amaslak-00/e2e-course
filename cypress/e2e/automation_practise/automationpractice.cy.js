@@ -48,8 +48,10 @@ context('e-shop go to', () => {
         WomenPage.checkIfConfirmationIsOpen();
         ShoppingCartPage.searchFirstPrice(1, price1);
         ShoppingCartPage.searchFirstPrice(2, price2);
-        const total = ShoppingCartPage.searchFirstPrice();
-        
+        let total = Number(price1.substring(1)) + Number(price2.substring(1))
+        total = "$" + total.toFixed(2);
+        ShoppingCartPage.searchTotalPrice(total);
+
 
     })
 

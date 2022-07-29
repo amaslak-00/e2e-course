@@ -8,9 +8,9 @@ export class ShoppingCartPage {
       cy.get(`tbody > :nth-child(${i}) .cart_unit > .price .price`).invoke('text').should('eq', price);
     }
 
-    static searchTotalPrice(){
-        let total = cy.get('#total_price');
-        return total[0].innerHTML.trim().substring(1);
+    static searchTotalPrice(price){
+        let total = cy.get('#total_product').invoke('text').should('eq', price);
+        // return total[0].innerHTML.trim().substring(1);
     }
 
 }
