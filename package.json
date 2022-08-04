@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "@wdio/allure-reporter": "^7.20.7",
     "cypress": "^10.3.1"
   }
 }

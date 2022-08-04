@@ -5,7 +5,7 @@ export class LoginPage {
     }
 
 
-    static inputAccount(loginemail, loginpassw) {
+    static setUserAndPassword(loginemail, loginpassw) {
 
         cy.get('input#email').type(loginemail);
         cy.get('input#passwd').type(loginpassw);
@@ -15,8 +15,9 @@ export class LoginPage {
         cy.get('#SubmitLogin').click();
     }
 
-    static checkIfMyAccountIsOpen(){
+    static checkIfMyAccountIsOpen(loginname){
        cy.get('.page-heading').contains("My account");
+       cy.get('.account > span'). contains(loginname);
     }
 
 }

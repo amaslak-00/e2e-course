@@ -5,6 +5,7 @@ import {MainPage} from "../page_objects/main-page"
 import { ShoppingCartPage } from "../page_objects/shopping-cart_page";
 import {WomenPage} from "../page_objects/women-page"
 
+
 context('e-shop go to', () => {
 
   beforeEach(() => {
@@ -22,14 +23,14 @@ context('e-shop go to', () => {
       })
     })
 
-      // it('should Log in', () => {
+       xit('should Log in', () => {
 
-      //     MainPage.clickSignButton();
-      //     LoginPage.inputAccount(data.email, data.password);
-      //     LoginPage.clickLogInButton();
-      //     LoginPage.checkIfMyAccountIsOpen();
+           MainPage.clickSignButton();
+           LoginPage.setUserAndPassword(data.email, data.password);
+           LoginPage.clickLogInButton();
+           LoginPage.checkIfMyAccountIsOpen(data.name);
 
-      // })
+       })
 
   })
 
@@ -41,10 +42,14 @@ context('e-shop go to', () => {
 
         WomenPage.openWomenCategory();
         WomenPage.checkIfWomenCategoryIsOpen();
-        const price1 = WomenPage.addElementToCart(4);
+        
+        const price1 = WomenPage.getPrice(4);
+        WomenPage.addElementToCart(4);
         WomenPage.clickContinueShopping();
-        const price2 = WomenPage.addElementToCart(3);
-        WomenPage.clickProccedShopping();
+        const price2 = WomenPage.getPrice(3);
+        WomenPage.addElementToCart(3);
+        WomenPage.clickProceedShopping();
+        let text = 'Product successfully added to your shopping cart';
         WomenPage.checkIfConfirmationIsOpen();
         ShoppingCartPage.searchFirstPrice(1, price1);
         ShoppingCartPage.searchFirstPrice(2, price2);

@@ -10,7 +10,6 @@ export class ShoppingCartPage {
 
     static searchTotalPrice(price){
         let total = cy.get('#total_product').invoke('text').should('eq', price);
-        // return total[0].innerHTML.trim().substring(1);
     }
 
 }
