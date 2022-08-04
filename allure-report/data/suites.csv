@@ -1,0 +1,3 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Thu Aug 04 15:17:18 CEST 2022","Thu Aug 04 15:17:53 CEST 2022","34162","","e-shop go to Logging in","","e-shop go to Logging in","should Log in","should Log in",""
+"passed","Thu Aug 04 15:17:53 CEST 2022","Thu Aug 04 15:18:28 CEST 2022","35609","","e-shop go to Adding to cart","","e-shop go to Adding to cart","should add element to cart","should add element to cart",""

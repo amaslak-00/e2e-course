@@ -23,7 +23,7 @@ context('e-shop go to', () => {
       })
     })
 
-       xit('should Log in', () => {
+       it('should Log in', () => {
 
            MainPage.clickSignButton();
            LoginPage.setUserAndPassword(data.email, data.password);
