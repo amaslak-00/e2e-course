@@ -8,6 +8,7 @@ export class WomenPage {
       cy.get('#center_column > h1').contains('Women');
     }
 
+    //Add product by ID
     static addElementToCart(number){
         cy.get(".product_list > :nth-child("+number+")").contains('Add to cart').click();
     }
@@ -17,6 +18,18 @@ export class WomenPage {
         cy.log(price[0].innerHTML.trim());
         return price[0].innerHTML.trim();
     } 
+
+    //Add product by name
+
+    static addProductByName(elementName){
+        cy.get(".product_list").find(".product-container").contains(elementName).parents('.product-container').contains('Add to cart').click(); 
+    }
+
+    static getPriceByName(elementName){
+        cy.get(".product_list").find(".product-container").contains(elementName).parents('.product-container').contains('Add to cart').click(); 
+    }
+
+
 
     static clickContinueShopping(){
         cy.wait(6000);

@@ -1,7 +1,7 @@
 export class ShoppingCartPage {
 
-    static searchFirstPrice(i, price){
-      cy.get(`tbody > :nth-child(${i}) .cart_unit > .price .price`).invoke('text').should('eq', price);
+    static searchFirstPrice(row, price){
+      cy.get(`tbody > :nth-child(${row}) .cart_unit > .price .price`).invoke('text').should('eq', price);
     }
 
     static searchTotalPrice(price){

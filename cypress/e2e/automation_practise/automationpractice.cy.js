@@ -23,7 +23,7 @@ context('e-shop go to', () => {
       })
     })
 
-       xit('should Log in', () => {
+       it('should Log in', () => {
 
            MainPage.clickSignButton();
            LoginPage.setUserAndPassword(data.email, data.password);
@@ -42,12 +42,11 @@ context('e-shop go to', () => {
 
         WomenPage.openWomenCategory();
         WomenPage.checkIfWomenCategoryIsOpen();
-        
-        const price1 = WomenPage.getPrice(4);
-        WomenPage.addElementToCart(4);
+        const price1 = WomenPage.getPrice(2);
+        WomenPage.addProductByName("Blouse");
         WomenPage.clickContinueShopping();
-        const price2 = WomenPage.getPrice(3);
-        WomenPage.addElementToCart(3);
+        const price2 = WomenPage.getPrice(1);
+        WomenPage.addProductByName("Faded Short Sleeve T-shirts");
         WomenPage.clickProceedShopping();
         let text = 'Product successfully added to your shopping cart';
         WomenPage.checkIfConfirmationIsOpen();
