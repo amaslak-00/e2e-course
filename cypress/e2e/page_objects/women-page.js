@@ -10,7 +10,7 @@ export class WomenPage {
 
     //Add product by ID
     static addElementToCart(number){
-        cy.get(".product_list > :nth-child("+number+")").contains('Add to cart').click();
+        cy.get(`.product_list > :nth-child(${number})`).contains('Add to cart').click();
     }
 
     static getPrice(number){
@@ -22,10 +22,6 @@ export class WomenPage {
     //Add product by name
 
     static addProductByName(elementName){
-        cy.get(".product_list").find(".product-container").contains(elementName).parents('.product-container').contains('Add to cart').click(); 
-    }
-
-    static getPriceByName(elementName){
         cy.get(".product_list").find(".product-container").contains(elementName).parents('.product-container').contains('Add to cart').click(); 
     }
 
